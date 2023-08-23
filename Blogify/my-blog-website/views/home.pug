@@ -1,0 +1,32 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home page
+        include ./partials/head
+        style 
+            include ../public/my-css/custom.css
+    body
+        include ./partials/nav
+        div.container.d-flex.flex-wrap.container-bg
+            each blog in blogs
+                .card.m-4.box(style='width: 22rem;')
+                    div.header
+                        img.card-img-top.card-image(src=blog.coverImageURL alt='...')
+                    .card-body
+                        h5.card-title #{blog.title}
+                        a.btn.my-button(href=`/blog/${blog._id}`) View
+    include ./partials/script
+
+
+    //- body
+    //-     include ./partials/nav
+    //-     div.container
+    //-         each blog in blogs
+    //-             div.card
+    //-                 div.header
+    //-                     img(src=blog.coverImageURL alt='...')
+    //-                 div.card-content
+    //-                     h5.card-title #{blog.title}
+    //-                     a.btn.btn-primary(href=`/blog/${blog._id}`) View
+    //- include ./partials/script

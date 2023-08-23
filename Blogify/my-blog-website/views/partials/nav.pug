@@ -1,0 +1,21 @@
+ul.nav.nav-tabs.my-nav(bs-theme="dark")
+        li.nav-it
+            a.nav-link(aria-current='page' href='#') ByteStack Bloggers
+        li.nav-item
+            a.nav-link(href='/') Home
+        if(locals.user)
+            li.nav-item
+                a.nav-link(href='/blog/add-new') Add Blog
+            li.nav-item.dropdown
+                a.nav-link.dropdown-toggle(data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false') #{user.fullname}
+                ul.dropdown-menu.my-dropdown
+                    li.user-dropdown
+                        a.dropdown-item(href='/user/logout') Logout
+        else 
+            li.nav-item
+                a.nav-link(href ="/user/signup") Create Account
+            li.nav-item
+                a.nav-link(href="/user/signin") Signin
+//- h4 #{JSON.stringify(locals.user)};
+        
+        

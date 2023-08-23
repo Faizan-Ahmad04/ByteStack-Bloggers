@@ -1,0 +1,24 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Signin page
+        include ./partials/head
+        style 
+            include ../public/my-css/custom.css
+    body
+        include ./partials/nav
+        div.form-container
+            if(locals.error)
+                div 
+                    p #{error} 
+            form.my-sigin-signup(action="/user/signin" method="post") 
+                h1 Signin
+                div.mb-3
+                    label.form-label(for='exampleInputEmail1' ) Email address
+                    input.form-control#exampleInputEmail1(type='email' aria-describedby='emailHelp' name="email" placeholder="example@gmail.com")
+                div.mb-3
+                    label.form-label(for='exampleInputPassword1' ) Password
+                    input.form-control#exampleInputPassword1(type='password' name="password" placeholder="********")
+                button.btn.my-button(type='submit') Submit
+    include ./partials/script

@@ -1,0 +1,32 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home page
+        include ./partials/head
+        style 
+            include ../public/my-css/custom.css
+    body
+        include ./partials/nav
+        div.full-blog-container.container-bg
+            div.container.mt-4
+                h1 #{blog.title}
+                img.blog-image(src=blog.coverImageURL alt='...' width="600px") 
+                pre #{blog.body}
+            div.container.mt-4
+                img.profile-img(src=blog.createdBy.profileImageURL alt='...' width='70px') 
+                span #{blog.createdBy.fullname}
+            div.container.mt-3
+                h1 Comments #{comments.length}
+                if(locals.user)
+                    form(action=`/blog/comment/${blog._id}` method="post") 
+                        div.mb-3
+                            input.form-control#fullname(type='text' aria-describedby='emailHelp' name="content" placeholder = "Enter  your Comment")
+                        button.btn.my-button(type='submit') Add 
+                div.mt-3
+                    each comment in comments 
+                        div 
+                            img.profile-img(src=blog.createdBy.profileImageURL alt='...' width='70px') 
+                            span #{comment.createdBy.fullname}
+                            pre #{comment.content}
+    include ./partials/script

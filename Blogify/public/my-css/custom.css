@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to top right, rgb(131, 63, 89), rgb(19, 23, 56));
+    color: white;
+}
+
+.container-bg {
+    margin-top: 100px;
+}
+
+/* Navbar CSS */
+.my-nav {
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    border: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.my-nav li {
+    position: relative;
+    left: 11vw;
+}
+
+.my-nav .user-dropdown {
+    position: relative;
+    left: 0;
+}
+
+.my-dropdown {
+    background-color: rgb(91, 33, 55);
+}
+
+.my-nav li a {
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.my-nav li a:hover {
+    color: rgb(255, 216, 97);
+}
+
+/*..................end navbar */
+
+
+/* Cards CSS */
+.box {
+    position: relative;
+    left: 3vw;
+    /* box-shadow: 0px 6px 12px gray; */
+    box-shadow: 0px 2px 8px rgb(225, 144, 175);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    /* color: black; */
+    font-size: 21px;
+    font-weight: bold;
+    transition: all 0.3s ease-out;
+    
+}
+
+.box .header {
+    width: 100%;
+    height: 200px;
+}
+
+.box .header .card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.box  h5 {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 5px 11px 2px 0vw;
+}
+
+.box:hover {
+    background-color: rgb(255, 216, 97);
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+        0 24px 46px var(--box-shadow-color);
+        color: black;
+}
+/*..................end cards */
+
+
+
+/* Blog detail page (when user click card view button)  */
+.full-blog-container {
+    padding-left: 10vw;
+}
+
+.full-blog-container img {
+    margin: 10px 13px 10px 0px;
+}
+.full-blog-container .profile-img {
+    height: 50px;
+    width: 52px;
+    border-radius: 25px;
+}
+
+.full-blog-container input:hover {
+    box-shadow: 0px 4px 14px gray;
+}
+
+.full-blog-container pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+/*..................end blog page */
+
+
+/* Give same styling to all button */
+.my-button {
+    color: white;
+    background-color: rgb(19, 23, 56);
+    padding: 10px 4px;
+    width: 185px;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 2px solid rgb(19, 23, 56);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.my-button:hover {
+    background-color: white;
+    color: rgb(19, 23, 56);
+    font-weight: bolder;
+    border: 2px solid rgb(19, 23, 56);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+}
+/*..................end button styling */
+
+
+/* Signin and Signup page snd forms styling */
+.form-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.form-container .my-sigin-signup {
+    width: 518px;
+    padding: 51px;
+    margin: 0px auto;
+    position: relative;
+    top: 150px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 8px rgb(225, 144, 175);
+}
+
+.form-container .my-sigin-signup h1 {
+    margin-bottom: 17px;
+}
+
+.form-container label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* add some more css to signin and signup button */
+.form-container .my-sigin-signup .my-button {
+    position: relative;
+    left: 7vw;
+    top: 10px;
+}
+/*..................end Signin & Singnup page */
+
+span{
+    font-weight: bold;
+}
+
+
+/* Add New Blog page styling */
+.add-blog-form{
+    width: 80%;
+    padding: 51px;
+    margin: 0px auto;
+    position: relative;
+    top: 150px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 8px rgb(225, 144, 175);
+}
+
+
+
+/* media queries to make website responsive */
+
+@media screen and (max-width: 815px) {
+    .full-blog-container .blog-image {
+        width: 61vw;
+    }
+}
+
+@media screen and (max-width: 661px) {
+    .form-container .my-sigin-signup {
+        width: 82vw;
+        top: 170px;
+    }
+
+    .form-container .my-sigin-signup .my-button {
+        width: 27vw;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .container-bg {
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .box .my-button{
+        width: 27vw;
+    }
+    .add-blog-form .my-button{
+        width: 27vw;
+    }
+}
+@media screen and (max-width: 300px) {
+    .container-bg {
+        margin-top: 190px;
+    }
+}
+/*..................end media queries */

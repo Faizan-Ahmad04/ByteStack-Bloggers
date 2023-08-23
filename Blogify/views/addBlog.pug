@@ -1,0 +1,25 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home page
+        include ./partials/head
+        style 
+            include ../public/my-css/custom.css
+    body
+        include ./partials/nav
+        div.container.mt-3.form-container
+            form.add-blog-form(action="/blog", method="post" enctype="multipart/form-data") 
+                h1 Add New Blogs
+                div.mb-3
+                    label.form-label(for='coverImage') Cover Image
+                    input.form-control#coverImage(type='file' name="coverImage" aria-describedby='title')
+                div.mb-3
+                    label.form-label(for='title') Title
+                    input.form-control#title(type='text' name="title" aria-describedby='title')
+                div.mb-3
+                    label.form-label(for='body') Body
+                    textarea.form-control#body(rows='3' name='body')
+                div.mb-3
+                    button.btn.my-button Add Blog
+    include ./partials/script
