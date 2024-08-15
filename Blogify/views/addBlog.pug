@@ -10,9 +10,9 @@ html(lang="en")
         include ./partials/nav
         div.container.mt-3.form-container
             form.add-blog-form(action="/blog", method="post" enctype="multipart/form-data") 
-                h1 Add New Blogs
+                h1 Add New Blog
                 div.mb-3
-                    label.form-label(for='coverImage') Cover Image
+                    label.form-label(for='coverImage') Upload Image
                     input.form-control#coverImage(type='file' name="coverImage" aria-describedby='title')
                 div.mb-3
                     label.form-label(for='title') Title
